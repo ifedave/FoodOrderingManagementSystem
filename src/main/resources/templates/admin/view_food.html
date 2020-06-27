@@ -1,0 +1,138 @@
+<!--
+Author
+Author URL: http://w3layouts.com
+-->
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <title>Pizza Pan  | Home </title>
+
+  <!-- Web-Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Spartan:400,500,600,700,900&display=swap" rel="stylesheet">
+  <!-- //Web-Fonts -->
+
+  <!-- Template CSS -->
+    <link rel="stylesheet"  th:href="@{/assets/css/style-starter.css}" />
+
+</head>
+
+<body>
+<!--header-->
+<div th:replace="fragments/header :: header_admin">...</div>
+<!--end of header-->
+
+
+<!-- Domain Modal -->
+<div class="modal right fade" id="DomainModal" tabindex="-1" role="dialog" aria-labelledby="DomainModalLabel2">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+          aria-hidden="true">&times;</span></button>
+
+      <div class="modal-body">
+        <div class="modal__content">
+          <h2 class="logo"> <span class="fa fa-pie-chart"></span> Pizza Pan</h2>
+          <!-- if logo is image enable this   
+          <h2 class="logo">
+            <img th:src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
+          </h2> -->
+          <p class="mt-md-3 mt-2">Lorem ipsum dolor sit amet, elit. Eos expedita ipsam at fugiat ab.</p>
+          <img th:src="@{/assets/images/p1.jpg}" alt="image" class="img-fluid radius-image mt-4">
+          <div class="widget-social-icons mt-sm-5 mt-4">
+            <h5 class="widget-title">Contact Us</h5>
+            <ul class="icon-rounded address">
+              <li>
+                <p> New York, NY-90814 Hill Station 4th Street</p>
+              </li>
+              <li class="mt-3">
+                <p><span class="fa fa-phone"></span> <a href="tel:+404-11-22-89">+1-2345-345-678-11</a></p>
+              </li>
+              <li class="mt-2">
+                <p><span class="fa fa-envelope"></span> <a
+                    href="mailto:pizza@order.com">pizza@order.com</a></p>
+              </li>
+              <li class="top_li1 mt-2">
+                <p><span class="fa fa-clock-o"></span> <a href="#url">Mon - Fri : 09:00 am to 10:00 pm
+                  </a></p>
+              </li>
+            </ul>
+          </div>
+          <div class="widget-social-icons mt-sm-5 mt-4">
+            <h5 class="widget-title">Follow Us</h5>
+            <ul class="icon-rounded">
+              <li><a class="social-link twitter" href="#url" target="_blank"><span class="fa fa-twitter"></span></a></li>
+              <li><a class="social-link linkedin" href="#url" target="_blank"><span class="fa fa-linkedin"></span></a></li>
+              <li><a class="social-link facebook" href="#url" target="_blank"><span class="fa fa-facebook"></span></a></li>
+            </ul>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+    <!-- //modal-content -->
+  </div>
+  <!-- //modal-dialog -->
+</div>
+
+
+
+
+<!-- iphone home block -->
+<section class="w3l-about py-5">
+    <div class="container py-lg-5 py-md-4">
+        <div class="row">
+
+            <!--/testimonials-->
+            <section class="col-lg-6 mt-lg-0" id="testimonials">
+                <div class="testimonials">
+                    <div class="container">
+
+                        <div class="row">
+                            <div class="col-md-12 mx-auto">
+                                <div class="owl-two owl-carousel owl-theme">
+                                    <div class="item" th:each="image: ${food.foodImages}">
+                                        <div class="slider-info">
+                                            <div class="img-circle">
+                                                <img th:src="${image.image_location}" class="img-fluid testimonial-img radius-image" alt="client">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--//testimonials-->
+
+
+            <div class="col-lg-6">
+                <h3 th:text="${food.food_name}">We make the Best Pizza in your town</h3>
+                <h5 th:text="${'₦'+food.price}">$25</h5>
+                <h5 class="mt-lg-3 mt-2" th:text="${food.description}">Fusce fringilla tincidunt laoreet volutpat cras varius sit.
+                    metus vitae diam mauris.
+                </h5>
+
+
+
+                <a href="blog1.html" class="btn-style btn-primary btn mt-lg-5 mt-4">Order Food</a>
+
+            </div>
+    </div>
+</section>
+<!-- //iphone home block -->
+
+<!--footer-->
+<div th:replace="fragments/footer :: footer">...</div>
+<!--end of footer-->
+  </body>
+
+  </html>
